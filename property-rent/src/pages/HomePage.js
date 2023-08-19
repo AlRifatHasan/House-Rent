@@ -1,0 +1,46 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Slider from "../components/Slider";
+import Layout from "./../components/Layout/Layout";
+
+const HomePage = () => {
+  const navigate = useNavigate();
+  const img1 =
+    "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvcGVydHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60";
+  const img2 =
+    "https://images.unsplash.com/photo-1626178793926-22b28830aa30?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cHJvcGVydHl8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60";
+  return (
+    <Layout>
+      <div className="container mt-3">
+        <Slider />
+        <div className="row">
+          <h1>Category</h1>
+          <div className="col-md-5">
+            <div className="Imagecontainer">
+              <img src={img1} alt="bachelor" style={{ width: "100%" }} />
+              <button
+                className="btn"
+                onClick={() => navigate("/category/bachelor")}
+              >
+                For Bachelor
+              </button>
+            </div>
+          </div>
+          <div className="col-md-5">
+            <div className="Imagecontainer">
+              <img src={img2} alt="family" style={{ width: "100%" }} />
+              <button
+                className="btn"
+                onClick={() => navigate("/category/family")}
+              >
+                For Family
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default HomePage;
